@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominion Uzoji Ikechukwu | Computer Scientist & Creative Technologist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            bottom: -8px;
+            left: 0;
+            background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: -10px;
+            background-color: #3a7bd5;
+            border-radius: 50%;
+            top: 0;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white bg-opacity-90 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold text-gray-800">Dominion<span class="text-blue-600">.</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="text-gray-800 hover:text-blue-600 px-3 py-2 font-medium">Home</a>
+                        <a href="#about" class="text-gray-800 hover:text-blue-600 px-3 py-2 font-medium">About</a>
+                        <a href="#skills" class="text-gray-800 hover:text-blue-600 px-3 py-2 font-medium">Skills</a>
+                        <a href="#projects" class="text-gray-800 hover:text-blue-600 px-3 py-2 font-medium">Projects</a>
+                        <a href="#experience" class="text-gray-800 hover:text-blue-600 px-3 py-2 font-medium">Experience</a>
+                        <a href="#contact" class="bg-blue-600 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-700 transition duration-300">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-800 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-blue-600">Home</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-blue-600">About</a>
+                <a href="#skills" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-blue-600">Skills</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-blue-600">Projects</a>
+                <a href="#experience" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-blue-600">Experience</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-white bg-blue-600 rounded-full text-center">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h4 class="text-lg font-medium text-blue-600 mb-4">Hello, I'm</h4>
+                    <h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-6">Dominion Uzoji <span class="text-blue-600">Ikechukwu</span></h1>
+                    <h2 class="text-2xl md:text-3xl font-medium text-gray-700 mb-8">Computer Scientist & <span class="text-blue-600">Creative Technologist</span></h2>
+                    <p class="text-lg text-gray-600 mb-10 max-w-lg">I blend technical expertise with creative vision to build immersive digital experiences that solve real-world problems.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium transition duration-300">Get In Touch</a>
+                        <a href="#projects" class="border-2 border-gray-300 hover:border-blue-600 text-gray-700 hover:text-blue-600 px-8 py-3 rounded-full font-medium transition duration-300">View My Work</a>
+                    </div>
+                    <div class="mt-12 flex space-x-6">
+                        <a href="#" class="text-gray-600 hover:text-blue-600 text-xl"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-blue-600 text-xl"><i class="fab fa-github"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-blue-600 text-xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-blue-600 text-xl"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-blue-100 absolute -right-6 -bottom-6 z-0"></div>
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-white relative z-10 shadow-xl floating">
+                            <img src="https://i.postimg.cc/Dy32shKF/IMG-20250531-222033-593-1.jpg" alt="Dominion Uzoji Ikechukwu" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-gray-800">About Me</h2>
+                <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">A passionate technologist with a unique blend of analytical thinking and creative problem-solving.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Who Am I?</h3>
+                    <p class="text-gray-600 mb-6">I'm Dominion Uzoji Ikechukwu, a Computer Scientist with expertise in web development, graphic design, and emerging technologies. My journey in tech began with a curiosity about how things work, which has evolved into a passion for creating digital solutions that make an impact.</p>
+                    <p class="text-gray-600 mb-6">With a strong foundation in computer science principles and a keen eye for design, I bridge the gap between technical implementation and user experience. I believe that technology should not only be functional but also intuitive and aesthetically pleasing.</p>
+                    <p class="text-gray-600 mb-8">When I'm not coding or designing, you can find me exploring new technologies, mentoring aspiring developers, or contributing to open-source projects.</p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-graduation-cap text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Education</h4>
+                                <p class="text-gray-600 text-sm">300L Computer Science</p>
+                                <p class="text-gray-600 text-sm">Federal University Lafia</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-briefcase text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Experience</h4>
+                                <p class="text-gray-600 text-sm">5+ Years</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-project-diagram text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Projects</h4>
+                                <p class="text-gray-600 text-sm">50+ Completed</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-users text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Clients</h4>
+                                <p class="text-gray-600 text-sm">30+ Worldwide</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="glass-effect p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">My Skills</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-800">Web Development</span>
+                                    <span class="text-blue-600">95%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-800">UI/UX Design</span>
+                                    <span class="text-blue-600">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-800">Graphic Design</span>
+                                    <span class="text-blue-600">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-800">Data Structures</span>
+                                    <span class="text-blue-600">88%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="font-medium text-gray-800">Algorithms</span>
+                                    <span class="text-blue-600">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 glass-effect p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">My Approach</h3>
+                        <p class="text-gray-600 mb-4">I follow a user-centered design philosophy combined with robust engineering principles:</p>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                                <span>Research & Understand the Problem</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                                <span>Design Intuitive User Experiences</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                                <span>Implement Scalable Solutions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-600 mt-1 mr-3"></i>
+                                <span>Test & Iterate for Perfection</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-gray-800">My Skills</h2>
+                <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">A diverse skill set that allows me to tackle complex problems from multiple perspectives.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Web Development -->
+                <div class="skill-card bg-white p-8 rounded-xl shadow-md text-center transition duration-300">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-code text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Web Development</h3>
+                    <p class="text-gray-600">Building responsive, performant websites and web applications with modern technologies.</p>
+                    <div class="mt-4 flex flex-wrap justify-center gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">HTML5</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">CSS3</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">JavaScript</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">React</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Node.js</span>
+                    </div>
+                </div>
+                
+                <!-- UI/UX Design -->
+                <div class="skill-card bg-white p-8 rounded-xl shadow-md text-center transition duration-300">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-paint-brush text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">UI/UX Design</h3>
+                    <p class="text-gray-600">Creating intuitive interfaces and seamless user experiences that delight users.</p>
+                    <div class="mt-4 flex flex-wrap justify-center gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Figma</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Adobe XD</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">User Research</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Wireframing</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Prototyping</span>
+                    </div>
+                </div>
+                
+                <!-- Graphic Design -->
+                <div class="skill-card bg-white p-8 rounded-xl shadow-md text-center transition duration-300">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-palette text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Graphic Design</h3>
+                    <p class="text-gray-600">Crafting visually compelling designs that communicate effectively and stand out.</p>
+                    <div class="mt-4 flex flex-wrap justify-center gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Photoshop</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Illustrator</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">InDesign</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Typography</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Branding</span>
+                    </div>
+                </div>
+                
+                <!-- Computer Science -->
+                <div class="skill-card bg-white p-8 rounded-xl shadow-md text-center transition duration-300">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-laptop-code text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Computer Science</h3>
+                    <p class="text-gray-600">Strong foundation in algorithms, data structures, and computational thinking.</p>
+                    <div class="mt-4 flex flex-wrap justify-center gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Algorithms</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Data Structures</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">OOP</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">DBMS</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">OS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-gray-800">Featured Projects</h2>
+                <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">A selection of my recent work showcasing my technical and creative capabilities.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 1" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">EduTech Platform</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Web App</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">A comprehensive learning management system with interactive courses, progress tracking, and AI-powered recommendations.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">React</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Node.js</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">MongoDB</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">TensorFlow</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Project</a>
+                            <a href="#" class="text-gray-600 hover:text-gray-800 font-medium">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Project 2" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Design System</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">UI/UX</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">A comprehensive design system for a fintech startup, including component library, style guide, and design principles.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Figma</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Storybook</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Design Tokens</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Accessibility</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Project</a>
+                            <a href="#" class="text-gray-600 hover:text-gray-800 font-medium">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Project 3" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Brand Identity</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Graphic Design</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Complete brand identity for a health tech startup including logo, color palette, typography, and marketing materials.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Illustrator</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Photoshop</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Brand Strategy</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Print Design</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Project</a>
+                            <a href="#" class="text-gray-600 hover:text-gray-800 font-medium">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Project 4" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Solana Token Tracker</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Blockchain</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">A web application to track token transactions, balances, and market data on the Solana blockchain with real-time updates.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">React</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Solana Web3.js</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">TypeScript</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Rust</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Project</a>
+                            <a href="#" class="text-gray-600 hover:text-gray-800 font-medium">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Project 5" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Developer Portfolio</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Web Design</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Custom portfolio website for a software engineer with interactive elements and a unique visual identity.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">HTML/CSS</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">JavaScript</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">GSAP</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Responsive</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Project</a>
+                            <a href="#" class="text-gray-600 hover:text-gray-800 font-medium">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Project 6" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-gray-800">Data Dashboard</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Data Viz</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Interactive dashboard for visualizing complex datasets with filtering, drill-down capabilities, and export options.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">React</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">D3.js</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Python</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">REST API</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium">View Project</a>
+                            <a href="#" class="text-gray-600 hover:text-gray-800 font-medium">Case Study</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 hover:bg-gray-50 rounded-full font-medium">
+                    View All Projects
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-gray-800">My Journey</h2>
+                <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">My professional path through education, work experience, and continuous learning.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Education -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                        <div class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-graduation-cap text-blue-600"></i>
+                        </div>
+                        Education
+                    </h3>
+                    
+                    <div class="relative pl-8">
+                        <div class="absolute left-0 top-0 h-full w-0.5 bg-gray-200"></div>
+                        
+                        <div class="timeline-item relative pb-8">
+                            <div class="bg-white p-6 rounded-xl shadow-sm">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="font-bold text-gray-800">B.Sc in Computer Science (300 Level)</h4>
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">2021 - Present</span>
+                                </div>
+                                <p class="text-gray-600 mb-2">Federal University Lafia</p>
+                                <p class="text-gray-600">Currently pursuing my degree in Computer Science with a focus on software development and emerging technologies.</p>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="timeline-item relative">
+                            <div class="bg-white p-6 rounded-xl shadow-sm">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="font-bold text-gray-800">Secondary Education</h4>
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">2010 - 2016</span>
+                                </div>
+                                <p class="text-gray-600 mb-2">Faith Academy Kaduna</p>
+                                <p class="text-gray-600">Graduated with distinction in Sciences. Developed strong foundation in STEM subjects and leadership skills.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Work Experience -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-8 flex items-center">
+                        <div class="bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-briefcase text-blue-600"></i>
+                        </div>
+                        Work Experience
+                    </h3>
+                    
+                    <div class="relative pl-8">
+                        <div class="absolute left-0 top-0 h-full w-0.5 bg-gray-200"></div>
+                        
+                        <div class="timeline-item relative pb-8">
+                            <div class="bg-white p-6 rounded-xl shadow-sm">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="font-bold text-gray-800">Junior Frontend Developer</h4>
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">2022 - Present</span>
+                                </div>
+                                <p class="text-gray-600 mb-2">Self-Employed</p>
+                                <p class="text-gray-600">Building responsive websites and web applications for clients using modern frontend technologies. Collaborating with designers to implement UI/UX designs.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item relative">
+                            <div class="bg-white p-6 rounded-xl shadow-sm">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="font-bold text-gray-800">Freelance Web Developer</h4>
+                                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">2020 - 2022</span>
+                                </div>
+                                <p class="text-gray-600 mb-2">Self-Employed</p>
+                                <p class="text-gray-600">Developed and maintained websites for small businesses and individuals, focusing on clean code and user-friendly interfaces.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-gray-800">Get In Touch</h2>
+                <p class="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">Have a project in mind or want to discuss potential opportunities? I'd love to hear from you.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <form "https://formspree.io/f/xrbkynab" method="post" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Your name">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Your email">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Subject">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Your message"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div>
+                    <div class="bg-gray-50 p-8 rounded-xl h-full">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
+                        <p class="text-gray-600 mb-8">Feel free to reach out through any of these channels. I typically respond within 24 hours.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Email</h4>
+                                    <a href="mailto:uzojidominion@gmail.com" class="text-gray-600 hover:text-blue-600">uzojidominion@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Phone</h4>
+                                    <a href="tel:+234 9063540737" class="text-gray-600 hover:text-blue-600">+234 9063540737</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Location</h4>
+                                    <p class="text-gray-600">Jos, Nigeria</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-12">
+                            <h4 class="font-bold text-gray-800 mb-4">Follow Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="www.linkedin.com/in/dominion-uzoji-a84444240" target="_blank" rel="noopener  noreferrer" class="bg-gray-200 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center text-gray-600 transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center text-gray-600 transition duration-300">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center text-gray-600 transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center text-gray-600 transition duration-300">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                                <a href="#" class="bg-gray-200 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center text-gray-600 transition duration-300">
+                                    <i class="fab fa-behance"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Dominion<span class="text-blue-400">.</span></h3>
+                    <p class="text-gray-400">Computer Scientist & Creative Technologist blending technical expertise with design thinking to create impactful digital experiences.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About</a></li>
+                        <li><a href="#skills" class="text-gray-400 hover:text-white transition duration-300">Skills</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition duration-300">Projects</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to my newsletter for the latest updates and insights.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-900">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; <span id="year"></span> Dominion Uzoji Ikechukwu. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+        
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
